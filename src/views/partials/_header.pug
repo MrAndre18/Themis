@@ -1,0 +1,34 @@
+-
+  const header_menu_links = [
+    {
+      url: "#",
+      text: "О компании"
+    },
+    {
+      url: "#",
+      text: "Практики"
+    },
+    {
+      url: "#",
+      text: "Команда"
+    },
+    {
+      url: "#",
+      text: "Контакты"
+    },
+  ]
+
+header.header
+  .header__content.content
+    .header__logo
+      a(href="")
+        img.svg(src="../assets/images/logo.svg", alt="Alliance Legal")
+    nav.header__menu
+      ul.header__links
+        each link, i in header_menu_links
+          if i == 0
+            li.header__link.active
+              a.link(href=link.url)= link.text
+          else
+            li.header__link 
+              a.link(href=link.url)= link.text

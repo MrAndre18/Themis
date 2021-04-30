@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/MontserratRegular.eot");
+  src: url("../fonts/MontserratRegular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MontserratRegular.woff2") format("woff2"),
+    url("../fonts/MontserratRegular.woff") format("woff"),
+    url("../fonts/MontserratRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/MontserratBold.eot");
+  src: url("../fonts/MontserratBold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MontserratBold.woff2") format("woff2"),
+    url("../fonts/MontserratBold.woff") format("woff"),
+    url("../fonts/MontserratBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+// @import 'normalize.css';
+
+// Color scheme
+@import "themes/_scheme-default";
+
+// Mixins
+@import "helpers/*.scss";
+
+// Plugins
+@import "vendors/*.scss";
+
+// Base
+@import "base/*.scss";
+
+// Modules
+@import "modules/*.scss";
+
+// Partials
+@import "partials/*.scss";
+
+// Pages
+@import "pages/*.scss";
+
+@import "~swiper/swiper-bundle.css";
+@import "~aos/dist/aos.css";
+// @import "~select2/dist/css/select2.css";
+// @import "~rangeslider.js/dist/rangeslider.css";

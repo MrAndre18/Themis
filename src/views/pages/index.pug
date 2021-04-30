@@ -1,0 +1,137 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  -
+    const first_screen_slider = [
+      {
+        description: "Более 10 лет успешной работы на российском и международном рынках юридических услуг и реструктуризации бизнеса"
+      },
+      {
+        description: "Свыше 700 завершенных проектов в различных юрисдикциях, сопровождение международных арбитражных споров по правилам LCIA, ICC, SCC в Лондоне, Цюрихе и Стокгольме"
+      },
+      {
+        description: "Признание экспертизы фирмы ведущими российскими и международными рейтингами, включая Chambers, Legal500, IFLR1000, World Tax"
+      }
+    ]
+
+    const index_services = [
+      {
+        url: "#",
+        title: "Уголовно-правовая защита бизнеса",
+        description: "Представляем интересы клиентов в рамках уголовного судопроизводства по экономическим делам.",
+        img: "assets/images/index/services/service-1.svg"
+      },
+      {
+        url: "#",
+        title: "Сопровождение сделок и инвестиционных проектов",
+        description: "Объединяем специалистов в разных областях права, чтобы защищать бизнес 365 дней в году.",
+        img: "assets/images/index/services/service-2.svg"
+      },
+      {
+        url: "#",
+        title: "Разрешение споров",
+        description: "Консультируем и представляем интересы клиента в досудебном урегулировании и судебных делах.",
+        img: "assets/images/index/services/service-3.svg"
+      },
+    ]
+
+    const index_trust_us = [
+      {
+        url: "assets/images/index/trust-us/trust-1.png",
+        alt: "International school of Kazan"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-2.png",
+        alt: "City star"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-3.png",
+        alt: "ZoltWasser"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-4.png",
+        alt: "ZOLT"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-5.png",
+        alt: "Awatera"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-6.png",
+        alt: "Казметрострой"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-7.jpg",
+        alt: "АК Барс Холдинг"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-8.jpg",
+        alt: "ЗМК"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-9.png",
+        alt: "Рубеж М"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-10.jpg",
+        alt: "Технострой"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-11.jpg",
+        alt: "It Park"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-12.png",
+        alt: "Банк Казани"
+      },
+    ]
+  main.main.index
+    .index__first-screen
+      h1.index-title_hovered Themis - ведущая юридическая фирма, специализирующаяся на комплексной защите бизнеса
+      p.index-title #[span.name Themis] #[span.line] #[span.text ведущая юридическая фирма, специализирующаяся на комплексной защите бизнеса]
+      .first-screen__contacts
+        .phone
+          a(href="tel:+88005553535") 8 800 555-35-35
+        .email
+          a(href="mailto:themis@mail.ru") themis@mail.ru
+      .first-screen__slider.swiper-container
+        .first-screen__slider-wrapper.swiper-wrapper
+          each slide in first_screen_slider
+            .first-screen__slider-slide.swiper-slide
+              .first-screen__content.content
+                .first-screen__description
+                  p= slide.description
+                  +moreBtn("#", "Больше о нас")
+    
+    .index__services.content
+      .services__header
+        +blockTitle("01", "Ведущие практики", "services__title")
+        +moreBtn("#", "Все практики")
+      ul.services__items
+        each service in index_services
+          li.services__item
+            a(href=service.url)
+              .services__item-img
+                img.svg(src=service.img, alt=service.title)
+              h4.services__item-title=service.title
+              p.services__item-description= service.description
+
+    .index__trust-us.content
+      .trust-us__header
+        +blockTitle("02", "Нам доверяют", "trust-us__title")
+        .trust-us__slider-navigation
+          .trust-us__slider-navigation-item.trust-us__slider-navigation-prev
+            span
+          .trust-us__slider-navigation-item.trust-us__slider-navigation-next
+            span
+      .trust-us__slider.swiper-container
+        .trust-us__slider-wrapper.swiper-wrapper
+          each element in index_trust_us
+            .trust-us__slider-slide.swiper-slide
+              img(src=element.url, alt=element.alt)
+
+block footer
+  include ../partials/_footer.pug

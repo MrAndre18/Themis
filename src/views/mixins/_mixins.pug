@@ -1,0 +1,9 @@
+mixin moreBtn(href, text)
+  a.more-btn(href=href)
+    img.svg(src="assets/images/icons/arrow-right.svg", alt="more")
+    span= text
+
+mixin blockTitle(number, text, className)
+  .block-title(class = className ? className : "")
+    span= number
+    h2= text
