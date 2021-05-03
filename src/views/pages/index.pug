@@ -88,6 +88,34 @@ block content
         alt: "Банк Казани"
       },
     ]
+
+    const index_testimonials = [
+      {
+        name: "Григорий Крючков",
+        position: "генеральный директор АО «Казметрострой»",
+        img: "assets/images/index/testimonials/testimonial-1.jpg",
+        text: "Мы работаем с Семис уже более 7 лет. В самых сложных и спорных ситуациях неизменно обращаемся к помощи и экспертному мнению коллег. Свое доверие  основываем на внушительном опыте совместной работы, всегда высоком уровне профессионализма, четкости и пунктуальности со стороны Семис. Это компания, которая заслуженно имеет высокую репутацию и всегда подтверждает ее уровнем ведения дел."
+      },
+      {
+        name: "Александр Галкин",
+        position: "генеральный директор УК «Бугорос»",
+        img: "",
+        text: "Искренне благодарим команду юристов Семис за надежную юридическую поддержку и подробные налоговые консультации, за всегда безупречное качество вашей работы. Особо ценим вашу внимательность, доброжелательность. Считаем большой удачей, что однажды обратившись к вам за помощью, мы получили надежного делового партнера на долгие годы. Хотелось бы пожелать и впредь поддерживать такие же высокие стандарты оказания консалтинговых услуг!"
+      },
+      {
+        name: "Роман Мельников",
+        position: "генеральный директор ООО «Рубеж М»",
+        img: "assets/images/index/testimonials/testimonial-2.jpg",
+        text: "Обратились в Семис после выездной налоговой проверки. Тогда на руках был акт с доначислением в десятки миллионов рублей, с которым мы были полностью не согласны. Команда Семис привела такие аргументы, что претензии налоговых органов были сняты еще на этапе досудебного обжалования. Большое вам спасибо за внимательное отношение, искренний интерес, ну и, конечно же, за выигранное дело. Безоговорочно, Семис удалось собрать истинную команду юристов-профессионалов, на которую можно положиться в самых непростых ситуациях и не прогадать. Теперь, Семис наш постоянный партнер и правовой советник. Желаем Вам дальнейшего процветания и много интересных дел!"
+      },
+      {
+        name: "Иван Архипов",
+        position: "главный бухгалтер ООО «Парсел Сервис Групп»",
+        img: "assets/images/index/testimonials/testimonial-3.jpg",
+        text: "Вот уже не первый год, в случае необходимости защиты правовых интересов нашей компании, мы обращаемся за помощью в Семис. Благодаря своевременной помощи Семис нам удалось разрешить возникший налоговый спор в досудебном порядке, возместить НДС и избежать необоснованных выплат. С тех пор Семис является нашим постоянным налоговым консультантом, помощь которого мы очень ценим и рекомендуем нашим друзьям и партнерам. Спасибо Вам – за полезные советы, искреннее участие и преданность своему делу."
+      },
+    ]
+
   main.main.index
     .index__first-screen
       h1.index-title_hovered Themis - ведущая юридическая фирма, специализирующаяся на комплексной защите бизнеса
@@ -96,7 +124,7 @@ block content
         .phone
           a(href="tel:+88005553535") 8 800 555-35-35
         .email
-          a(href="mailto:themis@mail.ru") themis@mail.ru
+          a(href="mailto:themis@mail.com") themis@mail.com
       .first-screen__slider.swiper-container
         .first-screen__slider-wrapper.swiper-wrapper
           each slide in first_screen_slider
@@ -119,19 +147,44 @@ block content
               h4.services__item-title=service.title
               p.services__item-description= service.description
 
-    .index__trust-us.content
-      .trust-us__header
+    .index__trust-us
+      .trust-us__header.content
         +blockTitle("02", "Нам доверяют", "trust-us__title")
-        .trust-us__slider-navigation
-          .trust-us__slider-navigation-item.trust-us__slider-navigation-prev
-            span
-          .trust-us__slider-navigation-item.trust-us__slider-navigation-next
-            span
-      .trust-us__slider.swiper-container
-        .trust-us__slider-wrapper.swiper-wrapper
-          each element in index_trust_us
-            .trust-us__slider-slide.swiper-slide
-              img(src=element.url, alt=element.alt)
+        .trust-us__slider-navigation.slider-navigation
+          .trust-us__slider-navigation-item.slider-navigation-item.trust-us__slider-navigation-prev.slider-navigation-prev
+            img.svg(src="assets/images/icons/slider-arrow.svg", alt="prev")
+          .trust-us__slider-navigation-item.slider-navigation-item.trust-us__slider-navigation-next.slider-navigation-next
+            img.svg(src="assets/images/icons/slider-arrow.svg", alt="next")
+      .trust-us__content
+        .trust-us__slider.swiper-container
+          .trust-us__slider-wrapper.swiper-wrapper
+            each element in index_trust_us
+              .trust-us__slider-slide.swiper-slide
+                img(src=element.url, alt=element.alt)
+
+    .index__testimonials.content
+      .testimonials__header
+        +blockTitle("03", "Мнение клиентов", "testimonials__title")
+        .testimonials__slider-navigation.slider-navigation
+          .testimonials__slider-navigation-item.slider-navigation-item.testimonials__slider-navigation-prev.slider-navigation-prev
+            img.svg(src="assets/images/icons/slider-arrow.svg", alt="prev")
+          .testimonials__slider-navigation-item.slider-navigation-item.testimonials__slider-navigation-next.slider-navigation-next
+            img.svg(src="assets/images/icons/slider-arrow.svg", alt="next")
+      .testimonials__slider.swiper-container
+        .testimonials__slider-wrapper.swiper-wrapper
+          each testimonial in index_testimonials
+            .testimonials__slider-slide.swiper-slide
+              .testimonials__img
+                if testimonial.img
+                  .testimonials__img-block
+                    img(src=testimonial.img, alt="Фото клиента")
+                else
+                  .testimonials__img-block.no-photo
+                    img.svg(src="assets/images/index/testimonials/no-photo.svg", alt="Нет фото")
+              .testimonials__content
+                p.testimonials__content-name= testimonial.name
+                p.testimonials__content-position= testimonial.position
+                p.testimonials__content-text= testimonial.text
 
 block footer
   include ../partials/_footer.pug

@@ -1,0 +1,64 @@
+.slider-navigation {
+  display: flex;
+
+  &-next {
+    margin-left: 16px;
+  }
+
+  &-prev {
+    transform: rotate(180deg);
+  }
+
+  &-item {
+    width: 55px;
+    height: 55px;
+    background: $color-3;
+    border: 1px solid $color-4;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include transition();
+
+    &:hover {
+      background: $color-4;
+
+      .svg {
+        opacity: 1;
+
+        path {
+          fill: $color-3;
+        }
+      }
+    }
+
+    .svg {
+      width: 40%;
+      opacity: 0.6;
+      @include transition();
+
+      path {
+        fill: $color-1;
+        @include transition();
+      }
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.4;
+      cursor: initial;
+
+      &:hover {
+        background: inherit;
+
+        .svg {
+          opacity: 0.4;
+
+          path {
+            fill: initial;
+          }
+        }
+      }
+    }
+  }
+}

@@ -34,4 +34,16 @@ if ($(".index")) {
       prevEl: ".trust-us__slider-navigation-prev",
     },
   });
+
+  const testimonialsSlider = new Swiper(".testimonials__slider", {
+    speed: 600,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    simulateTouch: false,
+
+    navigation: {
+      nextEl: ".testimonials__slider-navigation-next",
+      prevEl: ".testimonials__slider-navigation-prev",
+    },
+  });
 }

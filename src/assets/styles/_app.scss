@@ -1,4 +1,16 @@
 @font-face {
+  font-family: "RobotoMono";
+  src: url("../fonts/RobotoMonoLight.eot");
+  src: url("../fonts/RobotoMonoLight.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/RobotoMonoLight.woff2") format("woff2"),
+    url("../fonts/RobotoMonoLight.woff") format("woff"),
+    url("../fonts/RobotoMonoLight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Montserrat";
   src: url("../fonts/MontserratRegular.eot");
   src: url("../fonts/MontserratRegular.eot?#iefix") format("embedded-opentype"),
