@@ -1,7 +1,8 @@
 extends ../layouts/master.pug
 
 block header
-  include ../partials/_header.pug
+  .header-index
+    include ../partials/_header.pug
 
 block content
   -
@@ -19,19 +20,19 @@ block content
 
     const index_services = [
       {
-        url: "#",
+        url: "/practices",
         title: "Уголовно-правовая защита бизнеса",
         description: "Представляем интересы клиентов в рамках уголовного судопроизводства по экономическим делам.",
         img: "assets/images/index/services/service-1.svg"
       },
       {
-        url: "#",
-        title: "Сопровождение сделок и инвестиционных проектов",
-        description: "Объединяем специалистов в разных областях права, чтобы защищать бизнес 365 дней в году.",
+        url: "/practices",
+        title: "Сопровождение банкротства",
+        description: "Комплексное сопровождение процедур банкротства на стороне кредитора или должника.",
         img: "assets/images/index/services/service-2.svg"
       },
       {
-        url: "#",
+        url: "/practices",
         title: "Разрешение споров",
         description: "Консультируем и представляем интересы клиента в досудебном урегулировании и судебных делах.",
         img: "assets/images/index/services/service-3.svg"
@@ -137,7 +138,7 @@ block content
     .index__services.content
       .services__header
         +blockTitle("01", "Ведущие практики", "services__title")
-        +moreBtn("#", "Все практики")
+        +moreBtn("/practices", "Все практики")
       ul.services__items
         each service in index_services
           li.services__item

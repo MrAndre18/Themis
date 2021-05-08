@@ -1,0 +1,66 @@
+-
+  const footer_menu_links = [
+    {
+      url: "#",
+      text: "О компании"
+    },
+    {
+      url: "/practices",
+      text: "Практики"
+    },
+    {
+      url: "#",
+      text: "Команда"
+    },
+    {
+      url: "#",
+      text: "Контакты"
+    },
+  ]
+
+footer.footer
+  .footer__content.content
+    p.footer__author Сделано в #[a(href="#") TruthCode]
+    .footer__logo
+      a(href="/index")
+        img.svg(src="../assets/images/logo.svg", alt="Themis")
+    h3.footer__title Юридическая фирма
+    .footer__blocks
+      .footer__blocks-item.footer__links
+        p.footer__blocks-item-title Подробнее о нас
+        ul.links__items
+          each link in footer_menu_links
+            li.links__items-item
+              a.links__items-link(href=link.url)= link.text
+      .footer__blocks-item.footer__contacts
+        p.footer__blocks-item-title Онлайн консультация
+        form#back-call.contacts__items
+          .contacts__items-block
+            label.name-label Укажите, как к Вам обращаться
+              input.input.contacts__items-input#footer-input-name(
+                type="text",
+                name="name",
+                placeholder="Клиент",
+                autocomplete="off",
+                required)
+              p.error-msg Пожалуйста, укажите Ваше имя
+            label.phone-label Укажите номер телефона
+              input.input.contacts__items-input#footer-input-phone(
+                type="tel",
+                name="phone",
+                placeholder="+7 (123) 456-78-90",
+                autocomplete="off",
+                required)
+              p.error-msg Номер телефона указан неверно
+          button.contacts__items-submit(type="submit", form="back-call") Заказать звонок
+    .footer__bottom
+      p.footer__bottom-copyrights &copy; Themis 2021
+      .footer__bottom-networks 
+        a.footer__bottom-network.facebook(href="#")
+          img.svg(src="assets/images/icons/facebook.svg", alt="facebook")
+        a.footer__bottom-network.telegram(href="#")
+          img.svg(src="assets/images/icons/telegram.svg", alt="telegram")
+        a.footer__bottom-network.instagram(href="#")
+          img.svg(src="assets/images/icons/instagram.svg", alt="instagram")
+        a.footer__bottom-network.twitter(href="#")
+          img.svg(src="assets/images/icons/twitter.svg", alt="twitter")

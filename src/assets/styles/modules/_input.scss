@@ -1,0 +1,41 @@
+.input {
+  font-size: 16px;
+  padding: 14px 0 10px;
+  border-bottom: 1px solid $color-1;
+  color: $color-2;
+  @include transition();
+
+  &::placeholder {
+    font-size: 16px;
+    color: $color-2;
+    opacity: 0.6;
+    @include transition();
+  }
+
+  &:focus {
+    border-bottom: 1px solid $color-4;
+
+    &::placeholder {
+      opacity: 0.8;
+    }
+  }
+
+  & + .error-msg {
+    position: absolute;
+    left: 0;
+    top: calc(100% - 6px);
+    opacity: 0;
+    color: $color-5;
+    font-size: 11px;
+    @include transition();
+  }
+
+  &.error {
+    border-bottom: 1px solid $color-5;
+
+    & + .error-msg {
+      top: calc(100% + 6px);
+      opacity: 1;
+    }
+  }
+}

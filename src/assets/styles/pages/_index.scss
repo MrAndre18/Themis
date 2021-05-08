@@ -31,7 +31,8 @@ $first-screen-bg-color: rgba(0, 0, 0, 0.7);
       .name {
         font-size: 36px;
         font-weight: bold;
-        letter-spacing: 6px;
+        letter-spacing: 8px;
+        text-transform: uppercase;
       }
 
       .line {
@@ -99,6 +100,8 @@ $first-screen-bg-color: rgba(0, 0, 0, 0.7);
       }
 
       &__description {
+        position: relative;
+        z-index: 5;
         width: 45%;
 
         p {
@@ -113,11 +116,15 @@ $first-screen-bg-color: rgba(0, 0, 0, 0.7);
         bottom: 40px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 5;
+        z-index: 2;
         max-width: 1920px;
         width: 100%;
         padding: 0 40px;
         font-size: 20px;
+
+        @media (max-width: 1200px) {
+          padding: 0 20px;
+        }
 
         .phone,
         .email {
@@ -356,7 +363,7 @@ $first-screen-bg-color: rgba(0, 0, 0, 0.7);
         width: 360px;
         height: 420px;
         margin: 40px 20px 0 40px;
-        background: $color-4;
+        background: $color-7;
 
         &-block {
           position: absolute;
