@@ -6,7 +6,8 @@ import "Styles/_app.scss";
 
 $(() => {
   require("Scripts/convert-svg");
-  require("Scripts/header");
   require("Scripts/sliders");
   require("Scripts/validation");
+  require("Scripts/header");
+  require("Scripts/practices");
 });

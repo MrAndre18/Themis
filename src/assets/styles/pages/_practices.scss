@@ -11,6 +11,8 @@
 
   &__right {
     width: calc(100% - 320px - 60px);
+    border-left: 3px solid $color-6;
+    padding-left: 20px;
   }
 
   &__menu {
@@ -86,5 +88,141 @@
 
   &__services {
     margin-top: 120px;
+
+    &-block {
+      margin: 60px 0 0 auto;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-item {
+      position: relative;
+      border: 1px solid $color-6;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 0;
+        background: $color-6;
+        opacity: 0.4;
+        @include transition($duration: 0.9s);
+      }
+
+      &.active {
+        &::before {
+          height: 100%;
+        }
+
+        .trigger__caret {
+          transform: rotate(90deg);
+          span {
+            
+            &::before {
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      &-trigger {
+        position: relative;
+        display: flex;
+        height: 90px;
+        align-items: center;
+        padding: 0 40px;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          width: 0;
+          height: 3px;
+          background: $color-4;
+          @include transition($duration: 0.6s);
+        }
+
+        &:hover {
+          &::before {
+            width: calc(100% + 2px);
+          }
+        }
+
+        .trigger__caret {
+          margin: 0 0 0 auto;
+          @include transition($duration: 0.6s);
+
+          span {
+            position: relative;
+            display: block;
+            width: 1px;
+            height: 25px;
+            background: $color-4;
+            @include transition($duration: 0.6s);
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              transform: rotate(90deg);
+              background: inherit;
+              @include transition($duration: 0.6s);
+            }
+          }
+        }
+      }
+
+      &-number {
+        width: 50px;
+        font-size: 14px;
+      }
+
+      &-title {
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+
+      &-content {
+        padding: 30px 10% 40px;
+
+        .services__list {
+          border-top: 1px solid $color-1;
+          padding-top: 25px;
+          display: flex;
+          flex-direction: column;
+
+          &-item {
+            position: relative;
+            font-size: 18px;
+            line-height: 120%;
+            margin-bottom: 20px;
+            padding-left: 20px;
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 9px;
+              height: 1px;
+              width: 10px;
+              background: $color-4;
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
   }
 }
