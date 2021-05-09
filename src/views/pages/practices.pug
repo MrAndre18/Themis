@@ -7,14 +7,60 @@ block content
   -
     const practices = [
       {
-
+        url: "#",
+        title: "Инвестиционное и налоговое право",
+      },
+      {
+        url: "#",
+        title: "Корпоративное и трудовое право",
+      },
+      {
+        url: "#",
+        title: "Разрешение споров",
+      },
+      {
+        url: "#",
+        title: "Уголовно-правовая защита бизнеса",
+      },
+      {
+        url: "#",
+        title: "Сопровождение банкротства",
+      },
+      {
+        url: "#",
+        title: "Земельные и имущественные отношения",
+      },
+      {
+        url: "#",
+        title: "Частные детективы и розыск активов",
+      },
+      {
+        url: "#",
+        title: "Санкционное право",
       },
     ]
+    
   main.main.practices
-    .practices__content
+    .practices__content.content
       h1.title Практики
-      .practices__content-block 
+      .practices__content-block
         ul.practices__menu
+          each practice, i in practices
+            if i == 0
+              li.practices__menu-item.active
+                a.practices__menu-link(href=practice.url)= practice.title
+            else
+              li.practices__menu-item
+                a.practices__menu-link(href=practice.url)= practice.title
+        .practices__right
+          .practices__about
+            +blockTitle("01", "О практике", "practices__about-title")
+            .practices__about-text-1
+              p Практика включает несколько направлений, вместе образующих широкий инструментарий управления процессами движения капитала. Так налоговая специализация построена на многолетнем опыте успешного консультирования средних и развитых предприятий, включая крупных налогоплательщиков, а также на представительстве их интересов в сложных налоговых спорах.
+            .practices__about-text-2
+              p Приоритетами в области сопровождения сделок и инвестиционных проектов являются целесообразность, надёжность и ликвидность. Инвестиционные проекты, в которых участвует фирма, отличаются тщательным финансовым анализом, рациональным подходом к вопросам управления, определением чёткого плана и снижением правовых рисков для участников.
+          .practices__services
+            +blockTitle("02", "Услуги", "practices__services-title")
 
 block footer
   include ../partials/_footer.pug
