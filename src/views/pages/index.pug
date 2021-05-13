@@ -123,7 +123,7 @@ block content
       p.index-title #[span.name Themis] #[span.line] #[span.text ведущая юридическая фирма, специализирующаяся на комплексной защите бизнеса]
       .first-screen__contacts
         .phone
-          a(href="tel:+88005553535") 8 800 555-35-35
+          a(href="tel:+78005553535") 8 800 555-35-35
         .email
           a(href="mailto:themis@mail.com") themis@mail.com
       .first-screen__slider.swiper-container
@@ -133,7 +133,7 @@ block content
               .first-screen__content.content
                 .first-screen__description
                   p= slide.description
-                  +moreBtn("#", "Больше о нас")
+                  +moreBtn("/about", "Больше о нас")
     
     .index__services.content
       .services__header
@@ -149,19 +149,7 @@ block content
               p.services__item-description= service.description
 
     .index__trust-us
-      .trust-us__header.content
-        +blockTitle("02", "Нам доверяют", "trust-us__title")
-        .trust-us__slider-navigation.slider-navigation
-          .trust-us__slider-navigation-item.slider-navigation-item.trust-us__slider-navigation-prev.slider-navigation-prev
-            img.svg(src="assets/images/icons/slider-arrow.svg", alt="prev")
-          .trust-us__slider-navigation-item.slider-navigation-item.trust-us__slider-navigation-next.slider-navigation-next
-            img.svg(src="assets/images/icons/slider-arrow.svg", alt="next")
-      .trust-us__content
-        .trust-us__slider.swiper-container
-          .trust-us__slider-wrapper.swiper-wrapper
-            each element in index_trust_us
-              .trust-us__slider-slide.swiper-slide
-                img(src=element.url, alt=element.alt)
+      +trustUs(index_trust_us, "02", "Нам доверяют", "trust-us__title")
 
     .index__testimonials.content
       .testimonials__header
@@ -181,7 +169,7 @@ block content
                     img(src=testimonial.img, alt="Фото клиента")
                 else
                   .testimonials__img-block.no-photo
-                    img.svg(src="assets/images/index/testimonials/no-photo.svg", alt="Нет фото")
+                    img.svg(src="assets/images/icons/no-photo.svg", alt="Нет фото")
               .testimonials__content
                 p.testimonials__content-name= testimonial.name
                 p.testimonials__content-position= testimonial.position

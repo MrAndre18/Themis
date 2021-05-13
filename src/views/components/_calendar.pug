@@ -1,0 +1,19 @@
+.calendar
+  .calendar__month
+    .calendar__month-prev
+      img.svg(src="assets/images/icons/arrow-right.svg", alt="prev")
+    .calendar__month-item
+      .month
+      .year
+    .calendar__month-next
+      img.svg(src="assets/images/icons/arrow-right.svg", alt="next")
+  ul.calendar__weekdays
+    li.calendar__weekdays-item Пн
+    li.calendar__weekdays-item Вт
+    li.calendar__weekdays-item Ср
+    li.calendar__weekdays-item Чт
+    li.calendar__weekdays-item Пт
+    li.calendar__weekdays-item Сб
+    li.calendar__weekdays-item Вс
+  .calendar__days
+  input(type="hidden", name="date", data-type="js-choosed-date", data-date="")

@@ -1,0 +1,30 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.main.contacts
+    h1.title Контакты
+
+    .contacts__map#map
+
+    .contacts__content.content
+      +blockTitle("01", "Офис в Воронеже", "contacts__content-title")
+      .contacts__content-block
+        .contacts__content-address
+          p.address пр. Революции, 33б
+          .work-time
+            p.work-time__days пн#[span.line]вс
+            p.work-time__time 9#[span.line]18
+        .contacts__content-links
+          .phone
+            a(href="tel:+78005553535") +7 800 555-35-35
+          .email
+            a(href="mailto:themis@mail.com") themis@mail.com
+
+block footer
+  include ../partials/_footer.pug
+
+block scripts
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=bbb291f4-b6ee-47be-b380-b220af542e7d&lang=ru_RU") 

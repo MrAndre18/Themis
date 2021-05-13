@@ -1,0 +1,121 @@
+$animation_function: cubic-bezier(0.45, 0, 0.55, 1);
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: $color-2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include transition($property: transform, $duration: 0.9s);
+
+  &.loaded {
+    transform: translateY(-100%);
+  }
+
+  &__content {
+    width: 20%;
+
+    .svg {
+      overflow: visible;
+
+      path {
+        &#block {
+          &-1 {
+            animation: block-1 0.9s $animation_function 0.8s 1 normal backwards;
+          }
+
+          &-2 {
+            animation: block-2 0.9s $animation_function 0.6s 1 normal backwards;
+          }
+
+          &-3 {
+            animation: block-3 0.9s $animation_function 0.4s 1 normal backwards;
+          }
+
+          &-4 {
+            animation: block-4 0.9s $animation_function 0.2s 1 normal backwards;
+          }
+
+          &-5 {
+            animation: block-5 0.9s $animation_function 0s 1 normal backwards;
+          }
+        }
+
+        &#text {
+          animation: text 0.9s $animation_function 1.4s 1 normal backwards;
+        }
+      }
+
+      @keyframes block-1 {
+        0% {
+          opacity: 0;
+          transform: translateY(-70%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes block-2 {
+        0% {
+          opacity: 0;
+          transform: translateY(-30%) translateX(-70%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) translateX(0);
+        }
+      }
+
+      @keyframes block-3 {
+        0% {
+          opacity: 0;
+          transform: translateX(-70%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes block-4 {
+        0% {
+          opacity: 0;
+          transform: translateY(30%) translateX(-70%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) translateX(0);
+        }
+      }
+
+      @keyframes block-5 {
+        0% {
+          opacity: 0;
+          transform: translateY(70%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes text {
+        0% {
+          opacity: 0;
+          transform: translateY(70%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}

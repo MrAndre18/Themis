@@ -1,0 +1,75 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  -
+    const about_trust_us = [
+      {
+        url: "assets/images/index/trust-us/trust-1.png",
+        alt: "International school of Kazan"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-2.png",
+        alt: "City star"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-3.png",
+        alt: "ZoltWasser"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-4.png",
+        alt: "ZOLT"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-5.png",
+        alt: "Awatera"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-6.png",
+        alt: "Казметрострой"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-7.jpg",
+        alt: "АК Барс Холдинг"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-8.jpg",
+        alt: "ЗМК"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-9.png",
+        alt: "Рубеж М"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-10.jpg",
+        alt: "Технострой"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-11.jpg",
+        alt: "It Park"
+      },
+      {
+        url: "assets/images/index/trust-us/trust-12.png",
+        alt: "Банк Казани"
+      },
+    ]
+  main.main.about
+    p.about__name Themis
+    h1.title О компании
+
+    .about__description.content
+      .about__description-top
+        p С 2010 года, специализируемся на консалтинге в области права и риск менеджмента, оказании профессиональной юридической помощи и сопровождении бизнеса своих клиентов.
+      .about__description-bottom
+        p Компания защищает интересы корпоративных клиентов и частных лиц при разрешении споров в рамках российского и международного законодательства. Специалисты Themis сопровождают и консультируют сделки, инвестиционные проекты, оказывают юридическую поддержку при реструктуризации бизнеса.
+
+    .about__slogan
+      p.about__slogan-text #[span.advantage Доверие, конфиденциальность,] #[br] #[span.advantage ответственность и] #[br] #[span.advantage профессионализм] #[span.line] то, что мы готовы предоставить Вам в процессе нашего сотрудничества
+
+    .about__trust-us
+      +trustUs(about_trust_us, "01", "Нам доверяют", "trust-us__title")
+
+block footer
+  include ../partials/_footer.pug

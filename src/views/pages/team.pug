@@ -1,0 +1,141 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  -
+    const team = [
+      {
+        name: "Софья Иванова",
+        position: "Управляющий партнер",
+        img: "assets/images/team/person-1.jpg",
+        description: "Софья Иванова более 15 лет углубленно занимается вопросами налогового права, а также проблемами инвестиционной деятельности. Обладает значительным опытом в области консультирования, а также представления в суде интересов крупнейших российских и иностранных компаний по сложным вопросам расчета и уплаты налогов.",
+        practices: [
+          {
+            title: "Инвестиционное и налоговое право"
+          },
+          {
+            title: "Санкционное право"
+          },
+        ]
+      },
+      {
+        name: "Олег Щербаков",
+        position: "Старший партнер",
+        img: "assets/images/team/person-2.png",
+        description: "Олег Щербаков более 10 лет успешно представляет интересы клиентов при разрешении споров в российских арбитражных судах. Имеет многолетний опыт работы в области банкротства – в том числе в качестве арбитражного управляющего.",
+        practices: [
+          {
+            title: "Разрешение споров"
+          },
+          {
+            title: "Сопровождение банкротства"
+          },
+        ]
+      },
+      {
+        name: "Тимур Дементьев",
+        position: "Старший партнер",
+        img: "assets/images/team/person-3.png",
+        description: "Тимур Дементьев руководит проектами по сопровождению камеральных и выездных налоговых проверок крупнейших компаний различных секторов экономики ",
+        practices: [
+          {
+            title: "Инвестиционное и налоговое право"
+          },
+          {
+            title: "Земельные и имущественные отношения"
+          },
+          {
+            title: "Корпоративное и трудовое право"
+          },
+        ]
+      },
+      {
+        name: "Вероника Филатова",
+        position: "Советник",
+        img: "assets/images/team/person-4.jpg",
+        description: "Вероника Филатова более 20 лет специализируется на прямых инвестициях, специальных ситуациях и реструктуризации бизнеса.",
+        practices: [
+          {
+            title: "Санкционное право"
+          }
+        ]
+      },
+      {
+        name: "Иван Плотников",
+        position: "Старший партнер",
+        img: "assets/images/team/person-5.jpg",
+        description: "Иван Плотников более 15 лет успешно представляет интересы клиентов в российских судах и международном коммерческом арбитраже. Специализируется на спорах в области строительства, корпоративного права, ценных бумаг, страхования, ТЭК и внешнеэкономических сделок.",
+        practices: [
+          {
+            title: "Уголовно-правовая защита бизнеса"
+          },
+          {
+            title: "Частные детективы и розыск активов"
+          },
+        ]
+      },
+      {
+        name: "Виктория Филиппова",
+        position: "Старший партнер",
+        img: "assets/images/team/person-6.png",
+        description: "Виктория Филиппова более 15 лет специализируется на представлении интересов клиентов в судебных разбирательствах в российских судах при корпоративных конфликтах, коммерческих спорах, проведении процедур банкротства, а также на защите бизнеса от поглощения.",
+        practices: [
+          {
+            title: "Разрешение споров"
+          },
+          {
+            title: "Сопровождение банкротства"
+          },
+        ]
+      },
+    ]
+  main.main.team
+    include ../components/_order-consult.pug
+    .team__content.content
+      h1.title Команда
+      ul.team__photos
+        li.team__photos-item.team__photos-item-1
+          img(src="assets/images/team/team-1.jpg", alt="Наша команда")
+        li.team__photos-item.team__photos-item-2
+          img(src="assets/images/team/team-2.jpg", alt="Наша команда")
+        li.team__photos-item.team__photos-item-3
+          img(src="assets/images/team/team-3.jpg", alt="Наша команда")
+        li.team__photos-item.team__photos-item-4
+          img(src="assets/images/team/team-4.jpg", alt="Наша команда")
+        li.team__photos-item.team__photos-item-5
+          img(src="assets/images/team/team-5.jpg", alt="Наша команда")
+        li.team__photos-item.team__photos-item-6
+          img(src="assets/images/team/team-6.jpg", alt="Наша команда")
+
+      .team__persons
+        .persons__header
+          +blockTitle("01", "Наши специалисты", "persons__title")
+          .persons__slider-navigation.slider-navigation
+            .persons__slider-navigation-item.slider-navigation-item.persons__slider-navigation-prev.slider-navigation-prev
+              img.svg(src="assets/images/icons/slider-arrow.svg", alt="prev")
+            .persons__slider-navigation-item.slider-navigation-item.persons__slider-navigation-next.slider-navigation-next
+              img.svg(src="assets/images/icons/slider-arrow.svg", alt="next")
+        .persons__slider.swiper-container
+          .persons__slider-wrapper.swiper-wrapper
+            each person in team
+              .persons__slider-slide.swiper-slide
+                .persons__img
+                  if person.img
+                    .persons__img-block
+                      img(src=person.img, alt=person.name)
+                  else
+                    .persons__img-block.no-photo
+                      img.svg(src="assets/images/icons/no-photo.svg", alt="Нет фото")
+                .persons__content
+                  p.persons__content-name= person.name
+                  p.persons__content-position= person.position
+                  p.persons__content-text= person.description
+                  ul.persons__content-practices
+                    each practice in person.practices
+                      li.persons__content-practice= practice.title
+                  +moreBtn("#", "Заказать консультацию специалиста", "js-open-btn", "js-order-consult-btn")
+
+block footer
+  include ../partials/_footer.pug

@@ -1,0 +1,44 @@
+.register-modal.modal(data-modal="js-register", data-type="js-modal")
+  .modal__block
+    button.modal__close(data-type="js-close-btn")
+      span
+    .modal__block-left
+      h4.modal__block-title Регистрация
+      p.modal__block-subtitle Начните сотрудничество тогда, когда удобно именно Вам
+      .modal__block-logo
+        img.svg(src="../assets/images/logo.svg", alt="Themis")
+    .modal__block-right.register-modal__content
+      form#register.register-modal__form
+        .register-modal__name.modal__field
+          label.modal__field-label Имя
+            input.input(
+              type="text",
+              name="name",
+              placeholder="Иван",
+              required)
+            p.error-msg Необходимо ввести имя
+        .register-modal__email.modal__field
+          label.modal__field-label Фамилия
+            input.input(
+              type="text",
+              name="surname",
+              placeholder="Иванов",
+              required)
+            p.error-msg Необходимо ввести фамилию
+        .register-modal__email.modal__field
+          label.modal__field-label Email
+            input.input(
+              type="email",
+              name="email",
+              placeholder="example@mail.com",
+              required)
+            p.error-msg Введён неверный email
+        .register-modal__pasword.modal__field
+          label.modal__field-label Пароль
+            input.input(
+              type="password",
+              name="password",
+              placeholder="* * * * * *",
+              required)
+            p.error-msg Минимальная длина пароля - 6 символов
+        button.register-modal__content-submit.underlined-link(type="submit", form="register") Регистрация

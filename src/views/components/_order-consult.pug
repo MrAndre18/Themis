@@ -1,0 +1,92 @@
+-
+  const time = [
+    {
+      title: "09:00"
+    },
+    {
+      title: "10:00"
+    },
+    {
+      title: "11:00"
+    },
+    {
+      title: "12:00"
+    },
+    {
+      title: "13:00"
+    },
+    {
+      title: "14:00"
+    },
+    {
+      title: "15:00"
+    },
+    {
+      title: "16:00"
+    },
+    {
+      title: "17:00"
+    },
+  ]
+
+  const order_consult_practices = [
+    {
+      url: "#",
+      title: "Инвестиционное и налоговое право",
+    },
+    {
+      url: "#",
+      title: "Корпоративное и трудовое право",
+    },
+    {
+      url: "#",
+      title: "Разрешение споров",
+    },
+    {
+      url: "#",
+      title: "Уголовно-правовая защита бизнеса",
+    },
+    {
+      url: "#",
+      title: "Сопровождение банкротства",
+    },
+    {
+      url: "#",
+      title: "Земельные и имущественные отношения",
+    },
+    {
+      url: "#",
+      title: "Частные детективы и розыск активов",
+    },
+    {
+      url: "#",
+      title: "Санкционное право",
+    },
+  ]
+
+.order-consult.modal(data-modal="js-order-consult", data-type="js-modal")
+  .modal__block
+    button.modal__close(data-type="js-close-btn")
+      span
+    .modal__block-left
+      h4.modal__block-title Запись
+      p.modal__block-subtitle Начните сотрудничество тогда, когда удобно именно Вам
+      .modal__block-logo
+        img.svg(src="../assets/images/logo.svg", alt="Themis")
+    .modal__block-right
+      .order-consult__content
+        button.order-consult__content-submit.underlined-link Записаться
+        .order-consult__content-left
+          .order-consult__select.select-practice
+            p.modal__field-label Выберите практику
+            .order-consult__select-block
+              +select(order_consult_practices)
+          .order-consult__select.select-time
+            p.modal__field-label Выберите время
+            .order-consult__select-block
+              +select(time)
+        .order-consult__content-right
+          .order-consult__calendar
+            p.modal__field-label Выберите дату
+            .order-consult__calendar-block
+              include ../components/_calendar.pug

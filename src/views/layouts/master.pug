@@ -10,7 +10,12 @@ html(lang="ru")
 
     link(rel="shortcut icon", href="assets/favicon.svg", type="image/x-icon")
   body
+    //- include ../components/_preloader.pug
+    //- .loaded-content(style="opacity: 0")
     .loaded-content
+      include ../components/_auth-modal.pug
+      include ../components/_register-modal.pug
       block header
       block content
       block footer
+    block scripts

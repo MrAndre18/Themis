@@ -109,6 +109,12 @@ $first-screen-bg-color: rgba(0, 0, 0, 0.7);
           line-height: 120%;
           margin-bottom: 30px;
         }
+
+        .more-btn {
+          span {
+            color: $color-3;
+          }
+        }
       }
 
       &__contacts {
@@ -161,18 +167,6 @@ $first-screen-bg-color: rgba(0, 0, 0, 0.7);
       &__header {
         display: flex;
         justify-content: space-between;
-
-        .more-btn {
-          span {
-            color: $color-2;
-          }
-
-          &:hover {
-            span {
-              color: $color-3;
-            }
-          }
-        }
       }
 
       &__items {
@@ -269,63 +263,10 @@ $first-screen-bg-color: rgba(0, 0, 0, 0.7);
   }
 
   &__trust-us {
-    user-select: none;
     margin-bottom: 160px;
 
     @media (max-width: 768px) {
       margin-bottom: 80px;
-    }
-
-    .trust-us {
-      &__header {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      &__content {
-        margin-top: 60px;
-        padding: 30px 0;
-        border-top: 1px solid $color-4;
-        border-bottom: 1px solid $color-4;
-      }
-
-      &__slider {
-        height: fit-content;
-        max-width: 1200px;
-
-        &-wrapper {
-          transition-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
-        }
-
-        &-slide {
-          height: 120px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          &:hover {
-            img {
-              filter: grayscale(0);
-              opacity: 1;
-            }
-          }
-
-          &.swiper-slide-active {
-            img {
-              filter: grayscale(0);
-              opacity: 1;
-            }
-          }
-
-          img {
-            width: 70%;
-            height: auto;
-            filter: grayscale(1);
-            opacity: 0.5;
-            @include transition();
-          }
-        }
-      }
     }
   }
 
@@ -405,14 +346,14 @@ $first-screen-bg-color: rgba(0, 0, 0, 0.7);
         }
 
         &-position {
-          font-size: 20px;
+          font-size: 18px;
           color: $color-1;
           margin: 40px 0 20px;
         }
 
         &-text {
-          font-size: 22px;
-          line-height: 140%;
+          font-size: 20px;
+          line-height: 130%;
           color: $color-2;
         }
       }

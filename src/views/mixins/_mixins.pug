@@ -1,5 +1,8 @@
-mixin moreBtn(href, text)
-  a.more-btn(href=href)
+mixin moreBtn(href, text, dataType, modalType)
+  a.more-btn(
+      href=href,
+      data-type=dataType ? dataType : false,
+      data-modal=modalType ? modalType : false)
     img.svg(src="assets/images/icons/arrow-right.svg", alt="more")
     span= text
 
@@ -7,3 +10,32 @@ mixin blockTitle(number, text, className)
   .block-title(class = className ? className : "")
     span= number
     h2= text
+  
+mixin select(array)
+  .select
+    .select__header
+      p.select__current= array[0].title
+      .select__caret
+        img.svg(src="assets/images/icons/arrow-right.svg", alt="more")
+    ul.select__body
+      each item, i in array
+        if i == 0
+          li.select__item.active= item.title
+        else
+          li.select__item= item.title
+
+mixin trustUs(array, number, text, className)
+  .trust-us
+    .trust-us__header.content
+      +blockTitle(number, text, className)
+      .trust-us__slider-navigation.slider-navigation
+        .trust-us__slider-navigation-item.slider-navigation-item.trust-us__slider-navigation-prev.slider-navigation-prev
+          img.svg(src="assets/images/icons/slider-arrow.svg", alt="prev")
+        .trust-us__slider-navigation-item.slider-navigation-item.trust-us__slider-navigation-next.slider-navigation-next
+          img.svg(src="assets/images/icons/slider-arrow.svg", alt="next")
+    .trust-us__content
+      .trust-us__slider.swiper-container
+        .trust-us__slider-wrapper.swiper-wrapper
+          each element in array
+            .trust-us__slider-slide.swiper-slide
+              img(src=element.url, alt=element.alt)

@@ -160,6 +160,8 @@ block content
     ]
     
   main.main.practices
+    include ../components/_order-consult.pug
+      
     .practices__content.content
       h1.title Практики
       .practices__content-block
@@ -179,7 +181,9 @@ block content
             .practices__about-text-2
               p Приоритетами в области сопровождения сделок и инвестиционных проектов являются целесообразность, надёжность и ликвидность. Инвестиционные проекты, в которых участвует фирма, отличаются тщательным финансовым анализом, рациональным подходом к вопросам управления, определением чёткого плана и снижением правовых рисков для участников.
           .practices__services
-            +blockTitle("02", "Услуги", "practices__services-title")
+            .practices__services-header
+              +blockTitle("02", "Услуги", "practices__services-title")
+              +moreBtn("#", "Заказать консультацию", "js-open-btn", "js-order-consult-btn")
             ul.practices__services-block
               each service, i in practices_services       
                 li.practices__services-item

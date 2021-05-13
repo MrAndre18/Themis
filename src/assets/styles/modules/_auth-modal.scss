@@ -1,0 +1,23 @@
+.auth-modal {
+  .modal__block {
+    width: 50%;
+  }
+
+  .input {
+    padding: 10px 0;
+  }
+
+  .modal__block-right {
+    padding: 60px 10% 40px;
+  }
+
+  .modal__field {
+    margin-bottom: 30px;
+  }
+
+  .underlined-link {
+    position: absolute;
+    bottom: 40px;
+    left: 10%;
+  }
+}

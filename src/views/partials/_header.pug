@@ -1,7 +1,7 @@
 -
   const header_menu_links = [
     {
-      url: "#",
+      url: "/about",
       text: "О компании"
     },
     {
@@ -9,11 +9,11 @@
       text: "Практики"
     },
     {
-      url: "#",
+      url: "/team",
       text: "Команда"
     },
     {
-      url: "#",
+      url: "/contacts",
       text: "Контакты"
     },
   ]
@@ -32,3 +32,8 @@ header.header
           else
             li.header__link 
               a.link(href=link.url)= link.text
+    .header__auth
+      .header__auth-link
+        button.link(data-type="js-open-btn", data-modal="js-auth-btn") Вход
+      .header__auth-link
+        button.link(data-type="js-open-btn", data-modal="js-register-btn") Регистрация

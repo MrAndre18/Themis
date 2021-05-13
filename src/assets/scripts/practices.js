@@ -1,4 +1,4 @@
-if ($(".practices__services")) {
+if ($(".practices__services").width()) {
   const services = $(".practices__services-item");
 
   $(services).each(function (index, service) {

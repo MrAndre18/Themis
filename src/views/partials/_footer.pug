@@ -1,7 +1,7 @@
 -
   const footer_menu_links = [
     {
-      url: "#",
+      url: "/about",
       text: "О компании"
     },
     {
@@ -9,11 +9,11 @@
       text: "Практики"
     },
     {
-      url: "#",
+      url: "/team",
       text: "Команда"
     },
     {
-      url: "#",
+      url: "/contacts",
       text: "Контакты"
     },
   ]
@@ -41,7 +41,6 @@ footer.footer
                 type="text",
                 name="name",
                 placeholder="Клиент",
-                autocomplete="off",
                 required)
               p.error-msg Пожалуйста, укажите Ваше имя
             label.phone-label Укажите номер телефона
@@ -49,10 +48,9 @@ footer.footer
                 type="tel",
                 name="phone",
                 placeholder="+7 (123) 456-78-90",
-                autocomplete="off",
                 required)
               p.error-msg Номер телефона указан неверно
-          button.contacts__items-submit(type="submit", form="back-call") Заказать звонок
+          button.contacts__items-submit.underlined-link(type="submit", form="back-call") Заказать звонок
     .footer__bottom
       p.footer__bottom-copyrights &copy; Themis 2021
       .footer__bottom-networks 
