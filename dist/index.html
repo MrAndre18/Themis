@@ -12,26 +12,79 @@
 	</head>
 
 	<body>
-		<div class="loaded-content">
-			<header class="header">
-				<div class="header__content content">
-					<div class="header__logo"><a href=""><img class="svg" src="../assets/images/logo.svg" alt="Themis"></a></div>
-					<nav class="header__menu">
-						<ul class="header__links">
-							<li class="header__link active"><a class="link" href="#">О компании</a></li>
-							<li class="header__link"> <a class="link" href="practices">Практики</a></li>
-							<li class="header__link"> <a class="link" href="#">Команда</a></li>
-							<li class="header__link"> <a class="link" href="#">Контакты</a></li>
-						</ul>
-					</nav>
+		<div class="preloader">
+			<div class="preloader__content" style="display: none"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></div>
+		</div>
+		<div class="loaded-content" style="opacity: 0">
+			<div class="auth-modal modal" data-modal="js-auth" data-type="js-modal">
+				<div class="modal__block"><button class="modal__close" data-type="js-close-btn"><span></span></button>
+					<div class="modal__block-left">
+						<h4 class="modal__block-title">Вход</h4>
+						<p class="modal__block-subtitle">Начните сотрудничество тогда, когда удобно именно Вам</p>
+						<div class="modal__block-logo"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></div>
+					</div>
+					<div class="modal__block-right auth-modal__content">
+						<form class="auth-modal__form" id="auth">
+							<div class="auth-modal__email modal__field"><label class="modal__field-label">Email<input class="input" type="email" name="email" placeholder="example@mail.com" required>
+									<p class="error-msg">Введён неверный email</p>
+								</label></div>
+							<div class="auth-modal__pasword modal__field"><label class="modal__field-label">Пароль<input class="input" type="password" name="password" placeholder="* * * * * *" required>
+									<p class="error-msg">Минимальная длина пароля - 6 символов</p>
+								</label></div><button class="auth-modal__content-submit underlined-link" type="submit" form="auth">Вход</button>
+						</form>
+					</div>
 				</div>
-			</header>
+			</div>
+			<div class="register-modal modal" data-modal="js-register" data-type="js-modal">
+				<div class="modal__block"><button class="modal__close" data-type="js-close-btn"><span></span></button>
+					<div class="modal__block-left">
+						<h4 class="modal__block-title">Регистрация</h4>
+						<p class="modal__block-subtitle">Начните сотрудничество тогда, когда удобно именно Вам</p>
+						<div class="modal__block-logo"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></div>
+					</div>
+					<div class="modal__block-right register-modal__content">
+						<form class="register-modal__form" id="register">
+							<div class="register-modal__name modal__field"><label class="modal__field-label">Имя<input class="input" type="text" name="name" placeholder="Иван" required>
+									<p class="error-msg">Необходимо ввести имя</p>
+								</label></div>
+							<div class="register-modal__email modal__field"><label class="modal__field-label">Фамилия<input class="input" type="text" name="surname" placeholder="Иванов" required>
+									<p class="error-msg">Необходимо ввести фамилию</p>
+								</label></div>
+							<div class="register-modal__email modal__field"><label class="modal__field-label">Email<input class="input" type="email" name="email" placeholder="example@mail.com" required>
+									<p class="error-msg">Введён неверный email</p>
+								</label></div>
+							<div class="register-modal__pasword modal__field"><label class="modal__field-label">Пароль<input class="input" type="password" name="password" placeholder="* * * * * *" required>
+									<p class="error-msg">Минимальная длина пароля - 6 символов</p>
+								</label></div><button class="register-modal__content-submit underlined-link" type="submit" form="register">Регистрация</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="header-index">
+				<header class="header">
+					<div class="header__content content">
+						<div class="header__logo"><a href="/index"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></a></div>
+						<nav class="header__menu">
+							<ul class="header__links">
+								<li class="header__link active"><a class="link" href="/about">О компании</a></li>
+								<li class="header__link"> <a class="link" href="/practices">Практики</a></li>
+								<li class="header__link"> <a class="link" href="/team">Команда</a></li>
+								<li class="header__link"> <a class="link" href="/contacts">Контакты</a></li>
+							</ul>
+						</nav>
+						<div class="header__auth">
+							<div class="header__auth-link"><button class="link" data-type="js-open-btn" data-modal="js-auth-btn">Вход</button></div>
+							<div class="header__auth-link"><button class="link" data-type="js-open-btn" data-modal="js-register-btn">Регистрация</button></div>
+						</div>
+					</div>
+				</header>
+			</div>
 			<main class="main index">
 				<div class="index__first-screen">
 					<h1 class="index-title_hovered">Themis - ведущая юридическая фирма, специализирующаяся на комплексной защите бизнеса</h1>
 					<p class="index-title"><span class="name">Themis</span> <span class="line"></span> <span class="text">ведущая юридическая фирма, специализирующаяся на комплексной защите бизнеса</span></p>
 					<div class="first-screen__contacts">
-						<div class="phone"><a href="tel:+88005553535">8 800 555-35-35</a></div>
+						<div class="phone"><a href="tel:+78005553535">8 800 555-35-35</a></div>
 						<div class="email"><a href="mailto:themis@mail.com">themis@mail.com</a></div>
 					</div>
 					<div class="first-screen__slider swiper-container">
@@ -39,21 +92,21 @@
 							<div class="first-screen__slider-slide swiper-slide">
 								<div class="first-screen__content content">
 									<div class="first-screen__description">
-										<p>Более 10 лет успешной работы на российском и международном рынках юридических услуг и реструктуризации бизнеса</p><a class="more-btn" href="#"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="more" /><span>Больше о нас</span></a>
+										<p>Более 10 лет успешной работы на российском и международном рынках юридических услуг и реструктуризации бизнеса</p><a class="more-btn" href="/about"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="more" /><span>Больше о нас</span></a>
 									</div>
 								</div>
 							</div>
 							<div class="first-screen__slider-slide swiper-slide">
 								<div class="first-screen__content content">
 									<div class="first-screen__description">
-										<p>Свыше 700 завершенных проектов в различных юрисдикциях, сопровождение международных арбитражных споров по правилам LCIA, ICC, SCC в Лондоне, Цюрихе и Стокгольме</p><a class="more-btn" href="#"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="more" /><span>Больше о нас</span></a>
+										<p>Свыше 700 завершенных проектов в различных юрисдикциях, сопровождение международных арбитражных споров по правилам LCIA, ICC, SCC в Лондоне, Цюрихе и Стокгольме</p><a class="more-btn" href="/about"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="more" /><span>Больше о нас</span></a>
 									</div>
 								</div>
 							</div>
 							<div class="first-screen__slider-slide swiper-slide">
 								<div class="first-screen__content content">
 									<div class="first-screen__description">
-										<p>Признание экспертизы фирмы ведущими российскими и международными рейтингами, включая Chambers, Legal500, IFLR1000, World Tax</p><a class="more-btn" href="#"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="more" /><span>Больше о нас</span></a>
+										<p>Признание экспертизы фирмы ведущими российскими и международными рейтингами, включая Chambers, Legal500, IFLR1000, World Tax</p><a class="more-btn" href="/about"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="more" /><span>Больше о нас</span></a>
 									</div>
 								</div>
 							</div>
@@ -64,20 +117,20 @@
 					<div class="services__header">
 						<div class="block-title services__title"><span>01</span>
 							<h2>Ведущие практики</h2>
-						</div><a class="more-btn" href="#"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="more" /><span>Все практики</span></a>
+						</div><a class="more-btn" href="/practices"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="more" /><span>Все практики</span></a>
 					</div>
 					<ul class="services__items">
-						<li class="services__item"><a href="#">
+						<li class="services__item"><a href="/practices">
 								<div class="services__item-img"><img class="svg" src="assets/images/index/services/service-1.svg" alt="Уголовно-правовая защита бизнеса"></div>
 								<h4 class="services__item-title">Уголовно-правовая защита бизнеса</h4>
 								<p class="services__item-description">Представляем интересы клиентов в рамках уголовного судопроизводства по экономическим делам.</p>
 							</a></li>
-						<li class="services__item"><a href="#">
-								<div class="services__item-img"><img class="svg" src="assets/images/index/services/service-2.svg" alt="Сопровождение сделок и инвестиционных проектов"></div>
-								<h4 class="services__item-title">Сопровождение сделок и инвестиционных проектов</h4>
-								<p class="services__item-description">Объединяем специалистов в разных областях права, чтобы защищать бизнес 365 дней в году.</p>
+						<li class="services__item"><a href="/practices">
+								<div class="services__item-img"><img class="svg" src="assets/images/index/services/service-2.svg" alt="Сопровождение банкротства"></div>
+								<h4 class="services__item-title">Сопровождение банкротства</h4>
+								<p class="services__item-description">Комплексное сопровождение процедур банкротства на стороне кредитора или должника.</p>
 							</a></li>
-						<li class="services__item"><a href="#">
+						<li class="services__item"><a href="/practices">
 								<div class="services__item-img"><img class="svg" src="assets/images/index/services/service-3.svg" alt="Разрешение споров"></div>
 								<h4 class="services__item-title">Разрешение споров</h4>
 								<p class="services__item-description">Консультируем и представляем интересы клиента в досудебном урегулировании и судебных делах.</p>
@@ -85,30 +138,32 @@
 					</ul>
 				</div>
 				<div class="index__trust-us">
-					<div class="trust-us__header content">
-						<div class="block-title trust-us__title"><span>02</span>
-							<h2>Нам доверяют</h2>
+					<div class="trust-us">
+						<div class="trust-us__header content">
+							<div class="block-title trust-us__title"><span>02</span>
+								<h2>Нам доверяют</h2>
+							</div>
+							<div class="trust-us__slider-navigation slider-navigation">
+								<div class="trust-us__slider-navigation-item slider-navigation-item trust-us__slider-navigation-prev slider-navigation-prev"><img class="svg" src="assets/images/icons/slider-arrow.svg" alt="prev" /></div>
+								<div class="trust-us__slider-navigation-item slider-navigation-item trust-us__slider-navigation-next slider-navigation-next"><img class="svg" src="assets/images/icons/slider-arrow.svg" alt="next" /></div>
+							</div>
 						</div>
-						<div class="trust-us__slider-navigation slider-navigation">
-							<div class="trust-us__slider-navigation-item slider-navigation-item trust-us__slider-navigation-prev slider-navigation-prev"><img class="svg" src="assets/images/icons/slider-arrow.svg" alt="prev"></div>
-							<div class="trust-us__slider-navigation-item slider-navigation-item trust-us__slider-navigation-next slider-navigation-next"><img class="svg" src="assets/images/icons/slider-arrow.svg" alt="next"></div>
-						</div>
-					</div>
-					<div class="trust-us__content">
-						<div class="trust-us__slider swiper-container">
-							<div class="trust-us__slider-wrapper swiper-wrapper">
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-1.png" alt="International school of Kazan"></div>
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-2.png" alt="City star"></div>
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-3.png" alt="ZoltWasser"></div>
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-4.png" alt="ZOLT"></div>
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-5.png" alt="Awatera"></div>
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-6.png" alt="Казметрострой"></div>
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-7.jpg" alt="АК Барс Холдинг"></div>
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-8.jpg" alt="ЗМК"></div>
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-9.png" alt="Рубеж М"></div>
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-10.jpg" alt="Технострой"></div>
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-11.jpg" alt="It Park"></div>
-								<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-12.png" alt="Банк Казани"></div>
+						<div class="trust-us__content">
+							<div class="trust-us__slider swiper-container">
+								<div class="trust-us__slider-wrapper swiper-wrapper">
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-1.png" alt="International school of Kazan" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-2.png" alt="City star" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-3.png" alt="ZoltWasser" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-4.png" alt="ZOLT" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-5.png" alt="Awatera" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-6.png" alt="Казметрострой" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-7.jpg" alt="АК Барс Холдинг" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-8.jpg" alt="ЗМК" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-9.png" alt="Рубеж М" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-10.jpg" alt="Технострой" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-11.jpg" alt="It Park" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-12.png" alt="Банк Казани" /></div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -137,7 +192,7 @@
 							</div>
 							<div class="testimonials__slider-slide swiper-slide">
 								<div class="testimonials__img">
-									<div class="testimonials__img-block no-photo"><img class="svg" src="assets/images/index/testimonials/no-photo.svg" alt="Нет фото"></div>
+									<div class="testimonials__img-block no-photo"><img class="svg" src="assets/images/icons/no-photo.svg" alt="Нет фото"></div>
 								</div>
 								<div class="testimonials__content">
 									<p class="testimonials__content-name">Александр Галкин</p>
@@ -172,26 +227,26 @@
 			<footer class="footer">
 				<div class="footer__content content">
 					<p class="footer__author">Сделано в <a href="#">TruthCode</a></p>
-					<div class="footer__logo"><a href=""><img class="svg" src="../assets/images/logo.svg" alt="Themis"></a></div>
+					<div class="footer__logo"><a href="/index"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></a></div>
 					<h3 class="footer__title">Юридическая фирма</h3>
 					<div class="footer__blocks">
 						<div class="footer__blocks-item footer__links">
 							<p class="footer__blocks-item-title">Подробнее о нас</p>
 							<ul class="links__items">
-								<li class="links__items-item"><a class="links__items-link" href="#">О компании</a></li>
-								<li class="links__items-item"><a class="links__items-link" href="practices">Практики</a></li>
-								<li class="links__items-item"><a class="links__items-link" href="#">Команда</a></li>
-								<li class="links__items-item"><a class="links__items-link" href="#">Контакты</a></li>
+								<li class="links__items-item"><a class="links__items-link" href="/about">О компании</a></li>
+								<li class="links__items-item"><a class="links__items-link" href="/practices">Практики</a></li>
+								<li class="links__items-item"><a class="links__items-link" href="/team">Команда</a></li>
+								<li class="links__items-item"><a class="links__items-link" href="/contacts">Контакты</a></li>
 							</ul>
 						</div>
 						<div class="footer__blocks-item footer__contacts">
 							<p class="footer__blocks-item-title">Онлайн консультация</p>
 							<form class="contacts__items" id="back-call">
-								<div class="contacts__items-block"><label class="name-label">Укажите, как к Вам обращаться<input class="input contacts__items-input" id="footer-input-name" type="text" name="name" placeholder="Клиент" autocomplete="off" required>
+								<div class="contacts__items-block"><label class="name-label">Укажите, как к Вам обращаться<input class="input contacts__items-input" id="footer-input-name" type="text" name="name" placeholder="Клиент" required>
 										<p class="error-msg">Пожалуйста, укажите Ваше имя</p>
-									</label><label class="phone-label">Укажите номер телефона<input class="input contacts__items-input" id="footer-input-phone" type="tel" name="phone" placeholder="+7 (123) 456-78-90" autocomplete="off" required>
+									</label><label class="phone-label">Укажите номер телефона<input class="input contacts__items-input" id="footer-input-phone" type="tel" name="phone" placeholder="+7 (123) 456-78-90" required>
 										<p class="error-msg">Номер телефона указан неверно</p>
-									</label></div><button class="contacts__items-submit" type="submit" form="back-call">Заказать звонок</button>
+									</label></div><button class="contacts__items-submit underlined-link" type="submit" form="back-call">Заказать звонок</button>
 							</form>
 						</div>
 					</div>

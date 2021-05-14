@@ -12,44 +12,315 @@
 	</head>
 
 	<body>
-		<div class="loaded-content">
+		<div class="preloader">
+			<div class="preloader__content" style="display: none"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></div>
+		</div>
+		<div class="loaded-content" style="opacity: 0">
+			<div class="auth-modal modal" data-modal="js-auth" data-type="js-modal">
+				<div class="modal__block"><button class="modal__close" data-type="js-close-btn"><span></span></button>
+					<div class="modal__block-left">
+						<h4 class="modal__block-title">Вход</h4>
+						<p class="modal__block-subtitle">Начните сотрудничество тогда, когда удобно именно Вам</p>
+						<div class="modal__block-logo"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></div>
+					</div>
+					<div class="modal__block-right auth-modal__content">
+						<form class="auth-modal__form" id="auth">
+							<div class="auth-modal__email modal__field"><label class="modal__field-label">Email<input class="input" type="email" name="email" placeholder="example@mail.com" required>
+									<p class="error-msg">Введён неверный email</p>
+								</label></div>
+							<div class="auth-modal__pasword modal__field"><label class="modal__field-label">Пароль<input class="input" type="password" name="password" placeholder="* * * * * *" required>
+									<p class="error-msg">Минимальная длина пароля - 6 символов</p>
+								</label></div><button class="auth-modal__content-submit underlined-link" type="submit" form="auth">Вход</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="register-modal modal" data-modal="js-register" data-type="js-modal">
+				<div class="modal__block"><button class="modal__close" data-type="js-close-btn"><span></span></button>
+					<div class="modal__block-left">
+						<h4 class="modal__block-title">Регистрация</h4>
+						<p class="modal__block-subtitle">Начните сотрудничество тогда, когда удобно именно Вам</p>
+						<div class="modal__block-logo"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></div>
+					</div>
+					<div class="modal__block-right register-modal__content">
+						<form class="register-modal__form" id="register">
+							<div class="register-modal__name modal__field"><label class="modal__field-label">Имя<input class="input" type="text" name="name" placeholder="Иван" required>
+									<p class="error-msg">Необходимо ввести имя</p>
+								</label></div>
+							<div class="register-modal__email modal__field"><label class="modal__field-label">Фамилия<input class="input" type="text" name="surname" placeholder="Иванов" required>
+									<p class="error-msg">Необходимо ввести фамилию</p>
+								</label></div>
+							<div class="register-modal__email modal__field"><label class="modal__field-label">Email<input class="input" type="email" name="email" placeholder="example@mail.com" required>
+									<p class="error-msg">Введён неверный email</p>
+								</label></div>
+							<div class="register-modal__pasword modal__field"><label class="modal__field-label">Пароль<input class="input" type="password" name="password" placeholder="* * * * * *" required>
+									<p class="error-msg">Минимальная длина пароля - 6 символов</p>
+								</label></div><button class="register-modal__content-submit underlined-link" type="submit" form="register">Регистрация</button>
+						</form>
+					</div>
+				</div>
+			</div>
 			<header class="header">
 				<div class="header__content content">
-					<div class="header__logo"><a href=""><img class="svg" src="../assets/images/logo.svg" alt="Themis"></a></div>
+					<div class="header__logo"><a href="/index"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></a></div>
 					<nav class="header__menu">
 						<ul class="header__links">
-							<li class="header__link active"><a class="link" href="#">О компании</a></li>
-							<li class="header__link"> <a class="link" href="practices">Практики</a></li>
-							<li class="header__link"> <a class="link" href="#">Команда</a></li>
-							<li class="header__link"> <a class="link" href="#">Контакты</a></li>
+							<li class="header__link active"><a class="link" href="/about">О компании</a></li>
+							<li class="header__link"> <a class="link" href="/practices">Практики</a></li>
+							<li class="header__link"> <a class="link" href="/team">Команда</a></li>
+							<li class="header__link"> <a class="link" href="/contacts">Контакты</a></li>
 						</ul>
 					</nav>
+					<div class="header__auth">
+						<div class="header__auth-link"><button class="link" data-type="js-open-btn" data-modal="js-auth-btn">Вход</button></div>
+						<div class="header__auth-link"><button class="link" data-type="js-open-btn" data-modal="js-register-btn">Регистрация</button></div>
+					</div>
 				</div>
 			</header>
-			<main class="main practices"></main>
+			<main class="main practices">
+				<div class="order-consult modal" data-modal="js-order-consult" data-type="js-modal">
+					<div class="modal__block"><button class="modal__close" data-type="js-close-btn"><span></span></button>
+						<div class="modal__block-left">
+							<h4 class="modal__block-title">Запись</h4>
+							<p class="modal__block-subtitle">Начните сотрудничество тогда, когда удобно именно Вам</p>
+							<div class="modal__block-logo"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></div>
+						</div>
+						<div class="modal__block-right">
+							<div class="order-consult__content"><button class="order-consult__content-submit underlined-link">Записаться</button>
+								<div class="order-consult__content-left">
+									<div class="order-consult__select select-practice">
+										<p class="modal__field-label">Выберите практику</p>
+										<div class="order-consult__select-block">
+											<div class="select">
+												<div class="select__header">
+													<p class="select__current">Инвестиционное и налоговое право</p>
+													<div class="select__caret"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="more" /></div>
+												</div>
+												<ul class="select__body">
+													<li class="select__item active">Инвестиционное и налоговое право</li>
+													<li class="select__item">Корпоративное и трудовое право</li>
+													<li class="select__item">Разрешение споров</li>
+													<li class="select__item">Уголовно-правовая защита бизнеса</li>
+													<li class="select__item">Сопровождение банкротства</li>
+													<li class="select__item">Земельные и имущественные отношения</li>
+													<li class="select__item">Частные детективы и розыск активов</li>
+													<li class="select__item">Санкционное право</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="order-consult__select select-time">
+										<p class="modal__field-label">Выберите время</p>
+										<div class="order-consult__select-block">
+											<div class="select">
+												<div class="select__header">
+													<p class="select__current">09:00</p>
+													<div class="select__caret"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="more" /></div>
+												</div>
+												<ul class="select__body">
+													<li class="select__item active">09:00</li>
+													<li class="select__item">10:00</li>
+													<li class="select__item">11:00</li>
+													<li class="select__item">12:00</li>
+													<li class="select__item">13:00</li>
+													<li class="select__item">14:00</li>
+													<li class="select__item">15:00</li>
+													<li class="select__item">16:00</li>
+													<li class="select__item">17:00</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="order-consult__content-right">
+									<div class="order-consult__calendar">
+										<p class="modal__field-label">Выберите дату</p>
+										<div class="order-consult__calendar-block">
+											<div class="calendar">
+												<div class="calendar__month">
+													<div class="calendar__month-prev"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="prev"></div>
+													<div class="calendar__month-item">
+														<div class="month"></div>
+														<div class="year"></div>
+													</div>
+													<div class="calendar__month-next"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="next"></div>
+												</div>
+												<ul class="calendar__weekdays">
+													<li class="calendar__weekdays-item">Пн</li>
+													<li class="calendar__weekdays-item">Вт</li>
+													<li class="calendar__weekdays-item">Ср</li>
+													<li class="calendar__weekdays-item">Чт</li>
+													<li class="calendar__weekdays-item">Пт</li>
+													<li class="calendar__weekdays-item">Сб</li>
+													<li class="calendar__weekdays-item">Вс</li>
+												</ul>
+												<div class="calendar__days"></div><input type="hidden" name="date" data-type="js-choosed-date" data-date="">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="practices__content content">
+					<h1 class="title">Практики</h1>
+					<div class="practices__content-block">
+						<ul class="practices__menu">
+							<li class="practices__menu-item active"><a class="practices__menu-link" href="#">Инвестиционное и налоговое право</a></li>
+							<li class="practices__menu-item"><a class="practices__menu-link" href="#">Корпоративное и трудовое право</a></li>
+							<li class="practices__menu-item"><a class="practices__menu-link" href="#">Разрешение споров</a></li>
+							<li class="practices__menu-item"><a class="practices__menu-link" href="#">Уголовно-правовая защита бизнеса</a></li>
+							<li class="practices__menu-item"><a class="practices__menu-link" href="#">Сопровождение банкротства</a></li>
+							<li class="practices__menu-item"><a class="practices__menu-link" href="#">Земельные и имущественные отношения</a></li>
+							<li class="practices__menu-item"><a class="practices__menu-link" href="#">Частные детективы и розыск активов</a></li>
+							<li class="practices__menu-item"><a class="practices__menu-link" href="#">Санкционное право</a></li>
+						</ul>
+						<div class="practices__right">
+							<div class="practices__about">
+								<div class="block-title practices__about-title"><span>01</span>
+									<h2>О практике</h2>
+								</div>
+								<div class="practices__about-text-1">
+									<p>Практика включает несколько направлений, вместе образующих широкий инструментарий управления процессами движения капитала. Так налоговая специализация построена на многолетнем опыте успешного консультирования средних и развитых предприятий, включая крупных налогоплательщиков, а также на представительстве их интересов в сложных налоговых спорах.</p>
+								</div>
+								<div class="practices__about-text-2">
+									<p>Приоритетами в области сопровождения сделок и инвестиционных проектов являются целесообразность, надёжность и ликвидность. Инвестиционные проекты, в которых участвует фирма, отличаются тщательным финансовым анализом, рациональным подходом к вопросам управления, определением чёткого плана и снижением правовых рисков для участников.</p>
+								</div>
+							</div>
+							<div class="practices__services">
+								<div class="practices__services-header">
+									<div class="block-title practices__services-title"><span>02</span>
+										<h2>Услуги</h2>
+									</div><a class="more-btn" href="#" data-type="js-open-btn" data-modal="js-order-consult-btn"><img class="svg" src="assets/images/icons/arrow-right.svg" alt="more" /><span>Заказать консультацию</span></a>
+								</div>
+								<ul class="practices__services-block">
+									<li class="practices__services-item">
+										<div class="practices__services-item-trigger"><span class="practices__services-item-number">1</span>
+											<p class="practices__services-item-title">Управление прямыми инвестициями</p>
+											<div class="trigger__caret"><span></span></div>
+										</div>
+										<div class="practices__services-item-content">
+											<ul class="services__list">
+												<li class="services__list-item">Комплексное сопровождение процесса направления денежных средств в капитал предприятий с целью извлечения прибыли через повышение ликвидности, совершенствование корпоративного управления и снижение правовых рисков.</li>
+											</ul>
+										</div>
+									</li>
+									<li class="practices__services-item">
+										<div class="practices__services-item-trigger"><span class="practices__services-item-number">2</span>
+											<p class="practices__services-item-title">Управление инвестициями в недвижимость</p>
+											<div class="trigger__caret"><span></span></div>
+										</div>
+										<div class="practices__services-item-content">
+											<ul class="services__list">
+												<li class="services__list-item">Консультирование сделок по приобретению коммерческой и производственной недвижимости с целью повышения ликвидности объекта для дальнейшей сдачи в аренду или управления с учётом правовых и экономических рисков.</li>
+												<li class="services__list-item">Консультирование по вопросам приобретения объектов недвижимости в зарубежных юрисдикциях совместно с партнёрами, осуществляющими операционную деятельность за рубежом.</li>
+											</ul>
+										</div>
+									</li>
+									<li class="practices__services-item">
+										<div class="practices__services-item-trigger"><span class="practices__services-item-number">3</span>
+											<p class="practices__services-item-title">Управление предприятиями</p>
+											<div class="trigger__caret"><span></span></div>
+										</div>
+										<div class="practices__services-item-content">
+											<ul class="services__list">
+												<li class="services__list-item">сопровождение инвестиционной деятельности, связанной с капиталовложениями в предприятия, испытывающие сложности с операционной ликвидностью, но обладающие высоким потенциалом роста с целью финансового оздоровления и увеличения прибыли через введение кризисного управления и приведение деятельности в соответствие с нормами действующего законодательства;</li>
+												<li class="services__list-item">консультирование и комплексное сопровождение процессов реорганизации бизнеса и структурирования активов предприятий различных форм собственности;</li>
+												<li class="services__list-item">осуществление в интересах клиента полномочий органов управления юридического лица (в качестве управляющей компании, члена Совета директоров и др.);</li>
+												<li class="services__list-item">осуществление в интересах клиента прав акционера или участника юридического лица.</li>
+											</ul>
+										</div>
+									</li>
+									<li class="practices__services-item">
+										<div class="practices__services-item-trigger"><span class="practices__services-item-number">4</span>
+											<p class="practices__services-item-title">Управление ликвидной дебиторской задолженностью</p>
+											<div class="trigger__caret"><span></span></div>
+										</div>
+										<div class="practices__services-item-content">
+											<ul class="services__list">
+												<li class="services__list-item">Приобретение прав требования по неисполненным денежным обязательствам с получения прибыли через механизмы внесудебного или арбитражного урегулирования конфликта.</li>
+											</ul>
+										</div>
+									</li>
+									<li class="practices__services-item">
+										<div class="practices__services-item-trigger"><span class="practices__services-item-number">5</span>
+											<p class="practices__services-item-title">Налоговое консультирование</p>
+											<div class="trigger__caret"><span></span></div>
+										</div>
+										<div class="practices__services-item-content">
+											<ul class="services__list">
+												<li class="services__list-item">консультирование по налоговым выплатам в контексте совершаемых локальных и международных сделок, включая инвестиционные проекты (оптимизация налоговой базы, выявление и оценка рисков нарушения налогового законодательства при совершении сделки);</li>
+												<li class="services__list-item">консультирование по налоговому законодательству в связи с планами международного развития бизнеса, по вопросам двойного налогообложения;</li>
+												<li class="services__list-item">консультирование представительств иностранных организаций по соблюдению норм российского налогового законодательства.</li>
+											</ul>
+										</div>
+									</li>
+									<li class="practices__services-item">
+										<div class="practices__services-item-trigger"><span class="practices__services-item-number">6</span>
+											<p class="practices__services-item-title">Услуги по досудебному разрешению налоговых споров</p>
+											<div class="trigger__caret"><span></span></div>
+										</div>
+										<div class="practices__services-item-content">
+											<ul class="services__list">
+												<li class="services__list-item">сопровождение налоговых проверок организации;</li>
+												<li class="services__list-item">обжалование решений налоговых органов о привлечении к ответственности за нарушение налогового законодательства в административном порядке.</li>
+											</ul>
+										</div>
+									</li>
+									<li class="practices__services-item">
+										<div class="practices__services-item-trigger"><span class="practices__services-item-number">7</span>
+											<p class="practices__services-item-title">Фирма оказывает следующий набор юридических и консалтинговых услуг в рамках проектов:</p>
+											<div class="trigger__caret"><span></span></div>
+										</div>
+										<div class="practices__services-item-content">
+											<ul class="services__list">
+												<li class="services__list-item">правовая проверка объекта инвестиций (Due Diligence);</li>
+												<li class="services__list-item">финансовая проверка объекта инвестиций (Financial Due Diligence);</li>
+												<li class="services__list-item">правовая проверка контрагентов юридических лиц (здравая осмотрительность и принцип KYC);</li>
+												<li class="services__list-item">переговоры с представителями объекта инвестирования;</li>
+												<li class="services__list-item">оценочная деятельность и финансовый анализ;</li>
+												<li class="services__list-item">переговоры с представителями кредитных организаций;</li>
+												<li class="services__list-item">привлечение дополнительных средств через прямые инвестиции;</li>
+												<li class="services__list-item">анализ перспективности отрасли, географического положения и позиций юридического лица, объекта инвестиций на рынке (маркетинговые исследования);</li>
+												<li class="services__list-item">разработка бизнес-плана развития юридического лица;</li>
+												<li class="services__list-item">консультирование по вопросам инвестиционного кредитования (банковских гарантий) и взаимодействия с финансово-кредитными учреждениями;</li>
+												<li class="services__list-item">разработка планов и сценариев возврата инвестиций;</li>
+												<li class="services__list-item">структурирование активов, сделок и инвестиционных проектов, разработка и подготовка необходимой правовой документации;</li>
+												<li class="services__list-item">представление интересов в корпоративных процедурах и реализация полномочий корпоративного контроля;</li>
+												<li class="services__list-item">представление интересов в административных процедурах по взаимоотношениям с регуляторами (Центральный банк России, Федеральная антимонопольная служба, Федеральная налоговая служба и иные контролирующие органы).</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
 			<footer class="footer">
 				<div class="footer__content content">
 					<p class="footer__author">Сделано в <a href="#">TruthCode</a></p>
-					<div class="footer__logo"><a href=""><img class="svg" src="../assets/images/logo.svg" alt="Themis"></a></div>
+					<div class="footer__logo"><a href="/index"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></a></div>
 					<h3 class="footer__title">Юридическая фирма</h3>
 					<div class="footer__blocks">
 						<div class="footer__blocks-item footer__links">
 							<p class="footer__blocks-item-title">Подробнее о нас</p>
 							<ul class="links__items">
-								<li class="links__items-item"><a class="links__items-link" href="#">О компании</a></li>
-								<li class="links__items-item"><a class="links__items-link" href="practices">Практики</a></li>
-								<li class="links__items-item"><a class="links__items-link" href="#">Команда</a></li>
-								<li class="links__items-item"><a class="links__items-link" href="#">Контакты</a></li>
+								<li class="links__items-item"><a class="links__items-link" href="/about">О компании</a></li>
+								<li class="links__items-item"><a class="links__items-link" href="/practices">Практики</a></li>
+								<li class="links__items-item"><a class="links__items-link" href="/team">Команда</a></li>
+								<li class="links__items-item"><a class="links__items-link" href="/contacts">Контакты</a></li>
 							</ul>
 						</div>
 						<div class="footer__blocks-item footer__contacts">
 							<p class="footer__blocks-item-title">Онлайн консультация</p>
 							<form class="contacts__items" id="back-call">
-								<div class="contacts__items-block"><label class="name-label">Укажите, как к Вам обращаться<input class="input contacts__items-input" id="footer-input-name" type="text" name="name" placeholder="Клиент" autocomplete="off" required>
+								<div class="contacts__items-block"><label class="name-label">Укажите, как к Вам обращаться<input class="input contacts__items-input" id="footer-input-name" type="text" name="name" placeholder="Клиент" required>
 										<p class="error-msg">Пожалуйста, укажите Ваше имя</p>
-									</label><label class="phone-label">Укажите номер телефона<input class="input contacts__items-input" id="footer-input-phone" type="tel" name="phone" placeholder="+7 (123) 456-78-90" autocomplete="off" required>
+									</label><label class="phone-label">Укажите номер телефона<input class="input contacts__items-input" id="footer-input-phone" type="tel" name="phone" placeholder="+7 (123) 456-78-90" required>
 										<p class="error-msg">Номер телефона указан неверно</p>
-									</label></div><button class="contacts__items-submit" type="submit" form="back-call">Заказать звонок</button>
+									</label></div><button class="contacts__items-submit underlined-link" type="submit" form="back-call">Заказать звонок</button>
 							</form>
 						</div>
 					</div>

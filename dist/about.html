@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<title>T H E M I S &nbsp;|&nbsp; Главная</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
+		<link href="vendors.css" rel="stylesheet">
+		<link href="app.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="preloader">
+			<div class="preloader__content" style="display: none"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></div>
+		</div>
+		<div class="loaded-content" style="opacity: 0">
+			<div class="auth-modal modal" data-modal="js-auth" data-type="js-modal">
+				<div class="modal__block"><button class="modal__close" data-type="js-close-btn"><span></span></button>
+					<div class="modal__block-left">
+						<h4 class="modal__block-title">Вход</h4>
+						<p class="modal__block-subtitle">Начните сотрудничество тогда, когда удобно именно Вам</p>
+						<div class="modal__block-logo"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></div>
+					</div>
+					<div class="modal__block-right auth-modal__content">
+						<form class="auth-modal__form" id="auth">
+							<div class="auth-modal__email modal__field"><label class="modal__field-label">Email<input class="input" type="email" name="email" placeholder="example@mail.com" required>
+									<p class="error-msg">Введён неверный email</p>
+								</label></div>
+							<div class="auth-modal__pasword modal__field"><label class="modal__field-label">Пароль<input class="input" type="password" name="password" placeholder="* * * * * *" required>
+									<p class="error-msg">Минимальная длина пароля - 6 символов</p>
+								</label></div><button class="auth-modal__content-submit underlined-link" type="submit" form="auth">Вход</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="register-modal modal" data-modal="js-register" data-type="js-modal">
+				<div class="modal__block"><button class="modal__close" data-type="js-close-btn"><span></span></button>
+					<div class="modal__block-left">
+						<h4 class="modal__block-title">Регистрация</h4>
+						<p class="modal__block-subtitle">Начните сотрудничество тогда, когда удобно именно Вам</p>
+						<div class="modal__block-logo"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></div>
+					</div>
+					<div class="modal__block-right register-modal__content">
+						<form class="register-modal__form" id="register">
+							<div class="register-modal__name modal__field"><label class="modal__field-label">Имя<input class="input" type="text" name="name" placeholder="Иван" required>
+									<p class="error-msg">Необходимо ввести имя</p>
+								</label></div>
+							<div class="register-modal__email modal__field"><label class="modal__field-label">Фамилия<input class="input" type="text" name="surname" placeholder="Иванов" required>
+									<p class="error-msg">Необходимо ввести фамилию</p>
+								</label></div>
+							<div class="register-modal__email modal__field"><label class="modal__field-label">Email<input class="input" type="email" name="email" placeholder="example@mail.com" required>
+									<p class="error-msg">Введён неверный email</p>
+								</label></div>
+							<div class="register-modal__pasword modal__field"><label class="modal__field-label">Пароль<input class="input" type="password" name="password" placeholder="* * * * * *" required>
+									<p class="error-msg">Минимальная длина пароля - 6 символов</p>
+								</label></div><button class="register-modal__content-submit underlined-link" type="submit" form="register">Регистрация</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<header class="header">
+				<div class="header__content content">
+					<div class="header__logo"><a href="/index"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></a></div>
+					<nav class="header__menu">
+						<ul class="header__links">
+							<li class="header__link active"><a class="link" href="/about">О компании</a></li>
+							<li class="header__link"> <a class="link" href="/practices">Практики</a></li>
+							<li class="header__link"> <a class="link" href="/team">Команда</a></li>
+							<li class="header__link"> <a class="link" href="/contacts">Контакты</a></li>
+						</ul>
+					</nav>
+					<div class="header__auth">
+						<div class="header__auth-link"><button class="link" data-type="js-open-btn" data-modal="js-auth-btn">Вход</button></div>
+						<div class="header__auth-link"><button class="link" data-type="js-open-btn" data-modal="js-register-btn">Регистрация</button></div>
+					</div>
+				</div>
+			</header>
+			<main class="main about">
+				<p class="about__name">Themis</p>
+				<h1 class="title">О компании</h1>
+				<div class="about__description content">
+					<div class="about__description-top">
+						<p>С 2010 года, специализируемся на консалтинге в области права и риск менеджмента, оказании профессиональной юридической помощи и сопровождении бизнеса своих клиентов.</p>
+					</div>
+					<div class="about__description-bottom">
+						<p>Компания защищает интересы корпоративных клиентов и частных лиц при разрешении споров в рамках российского и международного законодательства. Специалисты Themis сопровождают и консультируют сделки, инвестиционные проекты, оказывают юридическую поддержку при реструктуризации бизнеса.</p>
+					</div>
+				</div>
+				<div class="about__slogan">
+					<p class="about__slogan-text"><span class="advantage">Доверие, конфиденциальность,</span> <br> <span class="advantage">ответственность и</span> <br> <span class="advantage">профессионализм</span> <span class="line"></span> то, что мы готовы предоставить Вам в процессе нашего сотрудничества</p>
+				</div>
+				<div class="about__trust-us">
+					<div class="trust-us">
+						<div class="trust-us__header content">
+							<div class="block-title trust-us__title"><span>01</span>
+								<h2>Нам доверяют</h2>
+							</div>
+							<div class="trust-us__slider-navigation slider-navigation">
+								<div class="trust-us__slider-navigation-item slider-navigation-item trust-us__slider-navigation-prev slider-navigation-prev"><img class="svg" src="assets/images/icons/slider-arrow.svg" alt="prev" /></div>
+								<div class="trust-us__slider-navigation-item slider-navigation-item trust-us__slider-navigation-next slider-navigation-next"><img class="svg" src="assets/images/icons/slider-arrow.svg" alt="next" /></div>
+							</div>
+						</div>
+						<div class="trust-us__content">
+							<div class="trust-us__slider swiper-container">
+								<div class="trust-us__slider-wrapper swiper-wrapper">
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-1.png" alt="International school of Kazan" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-2.png" alt="City star" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-3.png" alt="ZoltWasser" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-4.png" alt="ZOLT" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-5.png" alt="Awatera" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-6.png" alt="Казметрострой" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-7.jpg" alt="АК Барс Холдинг" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-8.jpg" alt="ЗМК" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-9.png" alt="Рубеж М" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-10.jpg" alt="Технострой" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-11.jpg" alt="It Park" /></div>
+									<div class="trust-us__slider-slide swiper-slide"><img src="assets/images/index/trust-us/trust-12.png" alt="Банк Казани" /></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer class="footer">
+				<div class="footer__content content">
+					<p class="footer__author">Сделано в <a href="#">TruthCode</a></p>
+					<div class="footer__logo"><a href="/index"><img class="svg" src="../assets/images/logo.svg" alt="Themis"></a></div>
+					<h3 class="footer__title">Юридическая фирма</h3>
+					<div class="footer__blocks">
+						<div class="footer__blocks-item footer__links">
+							<p class="footer__blocks-item-title">Подробнее о нас</p>
+							<ul class="links__items">
+								<li class="links__items-item"><a class="links__items-link" href="/about">О компании</a></li>
+								<li class="links__items-item"><a class="links__items-link" href="/practices">Практики</a></li>
+								<li class="links__items-item"><a class="links__items-link" href="/team">Команда</a></li>
+								<li class="links__items-item"><a class="links__items-link" href="/contacts">Контакты</a></li>
+							</ul>
+						</div>
+						<div class="footer__blocks-item footer__contacts">
+							<p class="footer__blocks-item-title">Онлайн консультация</p>
+							<form class="contacts__items" id="back-call">
+								<div class="contacts__items-block"><label class="name-label">Укажите, как к Вам обращаться<input class="input contacts__items-input" id="footer-input-name" type="text" name="name" placeholder="Клиент" required>
+										<p class="error-msg">Пожалуйста, укажите Ваше имя</p>
+									</label><label class="phone-label">Укажите номер телефона<input class="input contacts__items-input" id="footer-input-phone" type="tel" name="phone" placeholder="+7 (123) 456-78-90" required>
+										<p class="error-msg">Номер телефона указан неверно</p>
+									</label></div><button class="contacts__items-submit underlined-link" type="submit" form="back-call">Заказать звонок</button>
+							</form>
+						</div>
+					</div>
+					<div class="footer__bottom">
+						<p class="footer__bottom-copyrights">&copy; Themis 2021</p>
+						<div class="footer__bottom-networks"> <a class="footer__bottom-network facebook" href="#"><img class="svg" src="assets/images/icons/facebook.svg" alt="facebook"></a><a class="footer__bottom-network telegram" href="#"><img class="svg" src="assets/images/icons/telegram.svg" alt="telegram"></a><a class="footer__bottom-network instagram" href="#"><img class="svg" src="assets/images/icons/instagram.svg" alt="instagram"></a><a class="footer__bottom-network twitter" href="#"><img class="svg" src="assets/images/icons/twitter.svg" alt="twitter"></a></div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script type="text/javascript" src="assets/styles.js"></script>
+		<script type="text/javascript" src="assets/vendor.js"></script>
+		<script type="text/javascript" src="assets/app.js"></script>
+	</body>
+
+</html>

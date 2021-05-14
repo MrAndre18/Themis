@@ -1,3 +1,4 @@
+console.log("header");
 if ($(".header").width()) {
   const header = $(".header");
   let scrollPrev = 0;
